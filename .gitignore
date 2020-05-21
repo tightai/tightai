@@ -1,3 +1,4 @@
+*.code-workspace
 *.bak
 .gitattributes
 .last_checked

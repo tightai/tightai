@@ -10,6 +10,14 @@
 _tmp*
 tmp*
 tags
+docs/
+*.md
+.gitignore
+.git/
+.vscode/
+.github
+.gitattributes
+.gitconfig
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
