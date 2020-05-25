@@ -1,16 +1,6 @@
 # Tight.ai SDK
-> Summary description here.
+> Serverless Model Hosting & Model Marketplace
 
-
-```python
-!nbdev_build_docs
-```
-
-    converting: /Users/jmitch/Tight/tightai/00_core.ipynb
-    converting: /Users/jmitch/Tight/tightai/index.ipynb
-
-
-This file will become your README and also the index of your documentation.
 
 ## Install
 

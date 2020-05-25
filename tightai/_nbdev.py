@@ -26,6 +26,7 @@ index = {"USER_HOME": "00_conf.ipynb",
          "signup": "03_auth.ipynb",
          "Lookup": "04_lookup.py.ipynb",
          "Uploader": "05_upload.ipynb",
+         "base_tightignore": "06_projects.ipynb",
          "BaseObject": "06_projects.ipynb",
          "UserObject": "06_projects.ipynb",
          "VersionManager": "06_projects.ipynb",
@@ -36,7 +37,14 @@ index = {"USER_HOME": "00_conf.ipynb",
          "read_root": "07_local.ipynb",
          "server_app": "07_local.ipynb",
          "parse_cli_args": "07_local.ipynb",
-         "sort_by_key": "10_utils.ipynb"}
+         "local_server": "07_local.ipynb",
+         "sort_by_key": "10_utils.ipynb",
+         "sec_to_hours": "10_utils.ipynb",
+         "to_datetime": "10_utils.ipynb",
+         "format_date": "10_utils.ipynb",
+         "main": "11_cli.ipynb",
+         "SERVICE_OPTIONS": "11_cli.ipynb",
+         "ACTION_OPTIONS": "11_cli.ipynb"}
 
 modules = ["conf.py",
            "handlers.py",
@@ -46,10 +54,11 @@ modules = ["conf.py",
            "upload.py",
            "projects.py",
            "local.py",
-           "utils.py"]
+           "utils.py",
+           "cli.py"]
 
 doc_url = "https://tightai.github.io/tightai/"
 
-git_url = "https://github.com/tightai/tightai/tree/master/"
+git_url = "https://github.com/tightai/tightai"
 
 def custom_doc_links(name): return None

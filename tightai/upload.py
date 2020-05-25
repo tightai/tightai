@@ -6,7 +6,7 @@ __all__ = ['Uploader']
 import requests
 import pathspec
 import time
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from .lookup import Lookup
 from .conf import CLI_ENDPOINT
 
@@ -55,6 +55,7 @@ class Uploader(Lookup):
             return list(matches)
 
     def destination_path(self, relative_path):
+        relative_path = relative_path.replace("\\", "/")
         return f"{self.project_id}/v{self.version}/app/{relative_path}"
 
     def sign_dir(self):
@@ -62,7 +63,7 @@ class Uploader(Lookup):
         default_glob = path.rglob("*")
         ignore_paths = self.get_tightignore_paths()
         dir_files = [x for x in default_glob if x.is_file()]
-        dir_file_paths = [str(x.relative_to(path)) for x in dir_files]
+        dir_file_paths = [str(PurePosixPath(x.relative_to(path))) for x in dir_files]
         final_paths = [x for x in dir_file_paths if x not in ignore_paths]
         destination_paths = [self.destination_path(x) for x in final_paths]
         return destination_paths, final_paths
@@ -89,9 +90,7 @@ class Uploader(Lookup):
         else:
             # sign_r = requests.post(self.endpoint, json=data)
             sign_r = self.http_post(self.endpoint, data=data)
-            if sign_r.status_code != 200:
-                print(sign_r.status_code, sign_r.text)
-                return
+            self.handle_invalid_lookup(sign_r, expected_status_code=200)
             signed_response = sign_r.json()
             keys = list(signed_response.keys())
             if len(keys) != 2:
