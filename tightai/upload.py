@@ -50,9 +50,13 @@ class Uploader(Lookup):
         if not tightignore.exists():
             return []
         with open(tightignore, 'r') as fh:
-            spec = pathspec.PathSpec.from_lines('gitwildmatch', fh)
+            spec = pathspec.PathSpec.from_lines('gitwildmatch', fh.readlines())
             matches = spec.match_tree(self.path)
-            return list(matches)
+            match_list = []
+            for m in matches:
+                match_path = str(PurePosixPath(Path(m)))
+                match_list.append(match_path)
+            return match_list
 
     def destination_path(self, relative_path):
         relative_path = relative_path.replace("\\", "/")
@@ -84,9 +88,9 @@ class Uploader(Lookup):
                 dest_path = self.destination_path(f)
                 _dir = Path(self.path)
                 f_path = _dir / f
-                print("uploading", f_path)
+                print("Dry run uploading... ", f_path)
                 time.sleep(0.8)
-                print(f, 'was uploaded successfully')
+                print('..done')
         else:
             # sign_r = requests.post(self.endpoint, json=data)
             sign_r = self.http_post(self.endpoint, data=data)
@@ -101,11 +105,10 @@ class Uploader(Lookup):
                 signed_url = signed_data[dest_path]
                 _dir = Path(self.path)
                 f_path = _dir / f
+                print("Uploading", f, '...')
                 r2 = requests.post(signed_url, files={'file': open(f_path, 'rb')})
                 if r2.status_code == 204:
                     files_uploaded_count += 1
-                    if verbose == 1:
-                        print(f, 'was uploaded successfully')
                 else:
                     if verbose == 1:
                         print(f, 'was not uploaded successfully')
