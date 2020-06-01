@@ -29,7 +29,9 @@ class CredentialHandler:
 
     def from_file(self):
         if not TIGHTAI_LOCAL_CREDENTIALS.exists():
-            raise Exception("Tight.ai credentials not found. Please use `tightai.login()` right now.")
+            msg = "Tight.ai credentials not found.\n\nSign up:\nhttps://tight.ai/signup.\n\nLogin:\n$ python -c \"from tightai.auth import login; login();\"\nor\n$ tight login\n"
+            print(msg)
+            raise Exception(msg)
         with open(TIGHTAI_LOCAL_CREDENTIALS) as inf:
             username = None
             token = None
