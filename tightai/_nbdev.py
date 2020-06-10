@@ -26,8 +26,6 @@ index = {"USER_HOME": "00_conf.ipynb",
          "signup": "03_auth.ipynb",
          "Lookup": "04_lookup.py.ipynb",
          "Uploader": "05_upload.ipynb",
-         "base_tightignore": "09_base.ipynb",
-         "BaseObject": "09_base.ipynb",
          "VersionManager": "06_projects.ipynb",
          "Version": "06_projects.ipynb",
          "ProjectManager": "06_projects.ipynb",
@@ -37,6 +35,8 @@ index = {"USER_HOME": "00_conf.ipynb",
          "server_app": "08_local.ipynb",
          "parse_cli_args": "08_local.ipynb",
          "local_server": "08_local.ipynb",
+         "base_tightignore": "09_base.ipynb",
+         "BaseObject": "09_base.ipynb",
          "resolve_path": "10_utils.ipynb",
          "print_dict": "10_utils.ipynb",
          "sort_by_key": "10_utils.ipynb",
@@ -67,7 +67,7 @@ modules = ["conf.py",
            "cli.py",
            "user.py"]
 
-doc_url = "https://tightai.github.io/tightai/"
+doc_url = "https://docs.tight.ai/"
 
 git_url = "https://github.com/tightai/tightai"
 
