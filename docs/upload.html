@@ -117,7 +117,7 @@ sidebar: home_sidebar
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tighten_up</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">tighten_up</span><span class="o">.</span><span class="n">upload</span><span class="p">(</span><span class="n">verbose</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dry_run</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -130,8 +130,7 @@ sidebar: home_sidebar
 <div class="output_area">
 
 <div class="output_subarea output_stream output_stdout output_text">
-<pre>Uploading...
-uploading /Users/jmitch/tight/my-tight-apps/spam-sms/requirements.txt
+<pre>uploading /Users/jmitch/tight/my-tight-apps/spam-sms/requirements.txt
 requirements.txt was uploaded successfully
 uploading /Users/jmitch/tight/my-tight-apps/spam-sms/__init__.py
 __init__.py was uploaded successfully
@@ -192,16 +191,18 @@ data/tokenizer.pkl was uploaded successfully
 
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">PurePosixPath</span><span class="p">,</span> <span class="n">PureWindowsPath</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">pathlib</span>
+<span class="kn">from</span> <span class="nn">pathlib</span> <span class="kn">import</span> <span class="n">Path</span><span class="p">,</span> <span class="n">PurePosixPath</span><span class="p">,</span> <span class="n">PureWindowsPath</span>
 <span class="kn">import</span> <span class="nn">os</span>
 
 
-<span class="n">relative_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data</span><span class="se">\t</span><span class="s2">okenizer.pl&quot;</span><span class="p">)</span>
-<span class="n">relative_path</span> <span class="o">=</span> <span class="s2">&quot;C:\data</span><span class="se">\\</span><span class="s2">tokenizer.pl&quot;</span>
-<span class="n">relative_path</span> <span class="o">=</span> <span class="n">PurePosixPath</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span> <span class="c1"># .replace(os.sep, ntpath.sep)</span>
+<span class="n">relative_path</span> <span class="o">=</span> <span class="n">pathlib</span><span class="o">.</span><span class="n">Path</span><span class="p">(</span><span class="s2">&quot;data</span><span class="se">\\</span><span class="s2">tokenizer.pl&quot;</span><span class="p">)</span>
+<span class="c1"># relative_path = Path(&quot;C:\data\\tokenizer.pl&quot;)</span>
+<span class="n">relative_path</span> <span class="o">=</span> <span class="n">PurePosixPath</span><span class="p">(</span><span class="n">up</span> <span class="o">=</span><span class="n">relative_path</span><span class="p">)</span> <span class="c1"># .replace(os.sep, ntpath.sep)</span>
 <span class="c1"># relative_path = relative_path.replace(&quot;\\&quot;, &quot;/&quot;)</span>
 <span class="c1"># relative_path.as_posix()</span>
-<span class="n">relative_path</span><span class="o">.</span><span class="n">as_posix</span><span class="p">()</span>
+<span class="c1"># relative_path.as_posix()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">relative_path</span><span class="p">)</span>
 </pre></div>
 
     </div>
@@ -213,12 +214,10 @@ data/tokenizer.pkl was uploaded successfully
 
 <div class="output_area">
 
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;C:\\data\\tokenizer.pl&#39;</pre>
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>data\tokenizer.pl
+</pre>
 </div>
-
 </div>
 
 </div>
