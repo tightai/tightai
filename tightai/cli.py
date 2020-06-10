@@ -535,7 +535,10 @@ class VersionsCLI(BaseServiceCLI):
         if project_id == None:
             project_id = config['project_id']
         if version == None:
-            version = config['version']
+            if 'version' in config:
+                version = config['version']
+            else:
+                version = 1
         if lookup == False:
             return config, project_id, version
         version_obj = Version.objects.get(project_id=project_id, version=version)
