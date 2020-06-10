@@ -42,50 +42,36 @@ description: "Serverless Model Hosting & Model Marketplace"
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h2 id="How-to-use">How to use<a class="anchor-link" href="#How-to-use"> </a></h2>
+<h2 id="Getting-Started">Getting Started<a class="anchor-link" href="#Getting-Started"> </a></h2>
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Fill me in please! Don't forget code examples:</p>
+<h3 id="Sign-up">Sign up<a class="anchor-link" href="#Sign-up"> </a></h3><ul>
+<li>Go to <a href="https://www.tight.ai/signup">https://www.tight.ai/signup</a></li>
+</ul>
 
 </div>
 </div>
 </div>
-    {% raw %}
-    
-<div class="cell border-box-sizing code_cell rendered">
-<div class="input">
-
-<div class="inner_cell">
-    <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">say_hello</span><span class="p">(</span><span class="s2">&quot;sup&quot;</span><span class="p">)</span>
+<div class="cell border-box-sizing text_cell rendered"><div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Authenticate">Authenticate<a class="anchor-link" href="#Authenticate"> </a></h2><h3 id="Via-Login">Via Login<a class="anchor-link" href="#Via-Login"> </a></h3><p>This will prompt you for your username (or email) and password you used to sign up on tight.ai. Your local system will store unique credentials (never your account password) so your machine can re-access your account at anytime.</p>
+<p><em>Python Shell</em></p>
+<div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">tightai.auth</span> <span class="kn">import</span> <span class="n">login</span>
+<span class="n">login</span><span class="p">()</span>
 </pre></div>
+<p><em>Command Line</em></p>
 
-    </div>
-</div>
-</div>
-
-<div class="output_wrapper">
-<div class="output">
-
-<div class="output_area">
-
-
-
-<div class="output_text output_subarea output_execute_result">
-<pre>&#39;Hello sup!&#39;</pre>
-</div>
-
-</div>
+<pre><code>$ tight login</code></pre>
+<h3 id="Via-Token">Via Token<a class="anchor-link" href="#Via-Token"> </a></h3><p>Tokens are simple to create and very useful when needing to authenticate in a different way.</p>
+<blockquote><p>Coming soon.</p>
+</blockquote>
 
 </div>
 </div>
-
 </div>
-    {% endraw %}
-
 </div>
  
 

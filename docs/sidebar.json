@@ -1,8 +1,9 @@
 {
   "tightai": {
     "Overview": "/",
-    "Title": "/ToDo",
+    "Title": "/user",
     "tight.ai sdk": "/core",
-    "Projects": "/projects"
+    "Projects": "/projects",
+    "Command Line - CLI": "/cli"
   }
 }

@@ -11,13 +11,16 @@ entries:
       url: /
     - output: web,pdf
       title: Title
-      url: /ToDo
+      url: /user
     - output: web,pdf
       title: tight.ai sdk
       url: /core
     - output: web,pdf
       title: Projects
       url: /projects
+    - output: web,pdf
+      title: Command Line - CLI
+      url: /cli
     output: web
     title: tightai
   output: web

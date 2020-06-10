@@ -18,9 +18,6 @@ from .conf import API_ENDPOINT, CLI_ENDPOINT, USER_HOME
 
 # Cell
 class Lookup:
-    '''
-    API calls with headers built in
-    '''
     api = CLI_ENDPOINT
 
     @classmethod
