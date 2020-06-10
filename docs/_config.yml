@@ -1,7 +1,7 @@
-repository: tightai/nbdev_template
+repository: tightai/tightai
 output: web
-topnav_title: nbdev_template
-site_title: nbdev_template
+topnav_title: tight.ai sdk
+site_title: tight.ai sdk
 company_name: Tight.ai
 description: Serverless Model Hosting & Marketplace
 # Set to false to disable KaTeX math
