@@ -10,17 +10,26 @@ entries:
       title: Overview
       url: /
     - output: web,pdf
-      title: Title
-      url: /user
+      title: Command Line - CLI
+      url: /cli
     - output: web,pdf
-      title: tight.ai sdk
-      url: /core
+      title: Local Server
+      url: /local
+    - output: web,pdf
+      title: Python Package (sdk)
+      url: /python_package
+    - output: web,pdf
+      title: Title
+      url: /cli_og
     - output: web,pdf
       title: Projects
       url: /projects
     - output: web,pdf
-      title: Command Line - CLI
-      url: /cli
+      title: Default Configuration
+      url: /conf
+    - output: web,pdf
+      title: user
+      url: /user
     output: web
     title: tightai
   output: web

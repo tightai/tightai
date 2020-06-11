@@ -1,9 +1,12 @@
 {
   "tightai": {
     "Overview": "/",
-    "Title": "/user",
-    "tight.ai sdk": "/core",
+    "Command Line - CLI": "/cli",
+    "Local Server": "/local",
+    "Python Package (sdk)": "/python_package",
+    "Title": "/cli_og",
     "Projects": "/projects",
-    "Command Line - CLI": "/cli"
+    "Default Configuration": "/conf",
+    "user": "/user"
   }
 }
