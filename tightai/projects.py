@@ -13,11 +13,10 @@ from .exceptions import ArgumentsRequired
 from .lookup import Lookup
 from .base import BaseObject, base_tightignore
 from .conf import CLI_ENDPOINT
+from .downloaders import DownloadVersion
 from .user import UserObject
 from .upload import Uploader
 from .utils import sort_by_key, print_dict
-
-
 
 # Cell
 class VersionManager(Lookup, BaseObject):
@@ -136,8 +135,8 @@ class Version(Lookup, BaseObject):
     def destroy(self):
         return self.update_trigger(option='destroy')
 
-    def upload(self, path, verbose=True):
-        src_path = Path(path)
+    def upload(self, path=".", verbose=True):
+        src_path = Path(path).resolve()
         tightai_ignore = src_path / ".tightignore"
         if not tightai_ignore.exists():
             print("No .tightignore found. Creating default.")
@@ -186,6 +185,13 @@ class Version(Lookup, BaseObject):
             return None
         setattr(self, 'url', url)
         return url
+
+    def download(self, path, overwrite=False):
+        dest = Path(path).resolve()
+        project_id = self.project_id
+        version = self.version
+        dl = DownloadVersion(path=path, project_id=project_id, version=version)
+        dl.download(overwrite=overwrite)
 
     def update_trigger(self, option='status'):
         if option not in self.trigger_options:

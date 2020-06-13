@@ -1,6 +1,8 @@
 tight.json
 fiery.py
 11_cli_og.ipynb
+docs2/
+tightai2/ 
 
 *.code-workspace
 *.bak

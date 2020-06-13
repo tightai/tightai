@@ -4,8 +4,8 @@
     "Command Line - CLI": "/cli",
     "Local Server": "/local",
     "Python Package (sdk)": "/python_package",
-    "Title": "/cli_og",
     "Projects": "/projects",
+    "Title": "/cli_og",
     "Default Configuration": "/conf",
     "user": "/user"
   }

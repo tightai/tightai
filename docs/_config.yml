@@ -1,7 +1,7 @@
 repository: tightai/tightai
 output: web
-topnav_title: tight.ai sdk
-site_title: tight.ai sdk
+topnav_title: tightai
+site_title: tightai
 company_name: Tight.ai
 description: Serverless Model Hosting & Marketplace
 # Set to false to disable KaTeX math

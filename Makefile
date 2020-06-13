@@ -7,7 +7,7 @@ nbdev_template: $(SRC)
 	touch nbdev_template
 
 docs_serve: docs
-	cd docs && bundle exec jekyll serve
+	cd docs && bundle exec jekyll serve --incremental
 
 docs: $(SRC)
 	nbdev_build_docs

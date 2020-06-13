@@ -2,7 +2,7 @@ topnav:
 - title: Topnav
   items:
     - title: github
-      external_url: https://github.com/tightai/nbdev_template/tree/master/
+      external_url: https://github.com/tightai/tightai
 
 #Topnav dropdowns
 topnav_dropdowns:
